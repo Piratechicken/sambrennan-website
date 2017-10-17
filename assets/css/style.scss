@@ -1,0 +1,49 @@
+$vertical-margin-width: 100px;
+$overlap-margin: 50px;
+$purple: #360568;
+$red: #A31621;
+$background-color: #F5F5F5;
+$default-font-color: #222222;
+$header-font: 'Montserrat Alternates', sans-serif;
+
+
+body {
+  background: $background-color;
+  color: $default-font-color;
+}
+
+h1, h2, h3 {
+  font-family: $header-font
+}
+
+h1 {
+  font-weight: normal;
+  text-align: center;
+  font-size: 48px;
+  letter-spacing: 7.2px;
+  margin: 30px 20px 0 20px;
+  transition: 0.5s;
+}
+
+h2, h3 {
+  display: block;
+  font-weight: 300;
+  font-size: 24px;
+  text-align: center;  
+  margin: 10px 0 20px 0px;
+  transition: 0.5s;
+}
+
+.vertical-margin {  
+  padding-top: 50px;
+  min-height: 100vh;
+  margin-left: $vertical-margin-width;
+  margin-top: $overlap-margin;
+  border-left: 2px solid $purple;
+}
+
+.horizontal-line {
+  border-top: 2px solid $red;
+  width: calc(100vw - 80px);
+  margin-left: -$overlap-margin;
+}
