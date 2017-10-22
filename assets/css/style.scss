@@ -29,9 +29,16 @@ h2, h3 {
   display: block;
   font-weight: 300;
   font-size: 24px;
-  text-align: center;  
   margin: 10px 0 20px 0px;
   transition: 0.5s;
+}
+
+h2 {
+  text-align: center;  
+}
+
+h3 {
+  text-align: left;  
 }
 
 .vertical-margin {  
