@@ -1,8 +1,10 @@
 // SPACING
 $vertical-margin-width: 10vw;
+$top-margin: 5vh;
 $overlap-margin: 5vw;
 $paragraph-margin: 15vw;
 $paragraph-width: 700px;
+$header-height: 140px;
 
 // COLOURS
 $purple: #360568;
@@ -21,6 +23,15 @@ body {
   color: $default-font-color;
 }
 
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: $header-height; 
+}
+
 h1, h2, h3 {
   font-family: $header-font
 }
@@ -30,26 +41,26 @@ h1 {
   text-align: center;
   font-size: 48px;
   letter-spacing: 7.2px;
-  margin: 30px 20px 0 20px;
+  margin: 0 20px 0 20px;
   transition: 0.5s;
 }
 
 h2, h3 {
   display: block;
-  font-weight: 300;
   transition: 0.5s;
 }
 
 h2 {
   text-align: center;
   font-size: 24px;  
-  margin: 10px 0 20px 0px;
+  font-weight: 300;
+  margin: 10px 0 0 0;
 }
 
 h3 {
   text-align: left; 
   font-size: 36px;
-  font-weight: 600;
+  font-weight: 400;
   color: $light-purple;
   letter-spacing: 4px;
   margin: auto;
@@ -74,29 +85,60 @@ p {
 }
 
 .vertical-margin {  
-  padding-top: 50px;
+  padding-top: $overlap-margin;
   min-height: 100vh;
   margin-left: $vertical-margin-width;
-  margin-top: $overlap-margin;
+  margin-top: $top-margin;
   border-left: 2px solid $purple;
 }
 
 .horizontal-line {
   border-top: 2px solid $red;
-  width: calc(100vw - $vertical-margin-width);
+  width: 100vw - $overlap-margin;
   margin-left: -$overlap-margin;
 }
 
-.section, .intro-section {
-  min-height: 100vh;
+.nav-bar {
+  display: flex;
+  min-height: 60px;
+  flex-direction: row;
+  width: 100%;
+  align-content: center;
+  justify-content: center;
+  p {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    font-size: 16px;
+    text-align: center;
+    color: #222222;
+    letter-spacing: 1px;
+    padding: 10px;
+    transition: 0.5s;
+  }
+  p:hover {
+    color: #A31621;
+  }
+}
+
+.intro-section {
+  display: flex;
+  flex-direction: column;
+  height: 100vh - $top-margin;
   margin: 0;
   padding: 0;
 }
 
-.content-container {
+.intro-content-container {
   display: flex;
+  flex: 1;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  height: 100vh;
+  align-content: center;
+  
+  p {
+    text-align: center;
+  }
 }
