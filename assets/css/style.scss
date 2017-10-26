@@ -5,6 +5,7 @@ $overlap-margin: 5vw;
 $paragraph-margin: 15vw;
 $paragraph-width: 700px;
 $header-height: 140px;
+$subheader-height: 80px;
 
 // COLOURS
 $purple: #360568;
@@ -15,7 +16,11 @@ $default-font-color: #222222;
 
 // FONTS
 $header-font: 'Montserrat Alternates', sans-serif;
-
+$h1-size: 48px;
+$h2-size: 24px;
+$h3-size: 36px;
+$intro-p-size: 20px;
+$p-size: 20px;
 
 
 body {
@@ -39,7 +44,7 @@ h1, h2, h3 {
 h1 {
   font-weight: normal;
   text-align: center;
-  font-size: 48px;
+  font-size: $h1-size;
   letter-spacing: 7.2px;
   margin: 0 20px 0 20px;
   transition: 0.5s;
@@ -52,18 +57,18 @@ h2, h3 {
 
 h2 {
   text-align: center;
-  font-size: 24px;  
+  font-size: $h2-size;  
   font-weight: 300;
   margin: 10px 0 0 0;
 }
 
 h3 {
   text-align: left; 
-  font-size: 36px;
+  font-size: $h3-size;
   font-weight: 400;
   color: $light-purple;
   letter-spacing: 4px;
-  margin: auto;
+  margin: 40px auto 10px auto;
   width: $paragraph-width;
   // margin-left: $paragraph-margin;
   // margin: 80px 20px 20px 50px; 
@@ -72,16 +77,10 @@ h3 {
 p {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
-  font-size: 20px;
-  max-width: 800px;
+  font-size: $p-size;
   margin: auto;
   width: $paragraph-width;
-  // margin-left: $paragraph-margin;
-  // margin: 20px 40px 20px 80px;
-  text-align: left;
-  line-height: 200%;
   transition: 0.5s;
-  
 }
 
 .vertical-margin {  
@@ -106,18 +105,19 @@ p {
   align-content: center;
   justify-content: center;
   p {
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    font-size: 16px;
     text-align: center;
-    color: #222222;
+    line-height: normal;
+    font-weight: 400;
+    font-size: 16px;
     letter-spacing: 1px;
     padding: 10px;
+  }
+  a {
+    text-decoration: none;
+    color: #222222;
     transition: 0.5s;
   }
-  p:hover {
+  a:hover {
     color: #A31621;
   }
 }
@@ -125,7 +125,7 @@ p {
 .intro-section {
   display: flex;
   flex-direction: column;
-  height: 100vh - $top-margin;
+  min-height: 100vh - $top-margin;
   margin: 0;
   padding: 0;
 }
@@ -134,11 +134,36 @@ p {
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
   p {
     text-align: center;
+    font-size: $intro-p-size;
+    line-height: 200%;
   }
 }
+
+.section {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.section-content-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  p {
+    text-align: left;
+    line-height: 150%;
+  }
+  img {
+    width: 200px;
+    height: auto;
+  }
+}
+
