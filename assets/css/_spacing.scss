@@ -1,19 +1,26 @@
 // SPACING & MARGINS
-$vertical-margin-width: 10vw;
-$top-margin: 5vh;
-$overlap-margin: 5vw;
 $header-height: 140px;
-$paragraph-margin: 15vw;
 
-
-
-$paragraphs: (
-  small: 700px,
-  medium: 700px,
-  big: 700px
+$vertical-margin-width: (
+  small: 5vw,
+  medium: 10vw,
+  big: 10vw
 );
 
-// _component.scss
-// .element {
-//   background-color: map-get($colors, sky);
-// }
+$top-margin: (
+  small: 2vh,
+  medium: 5vh,
+  big: 5vh  
+);
+
+$paragraphs: (
+  small: auto,
+  medium: 600px,
+  big: 800px
+);
+
+$overlap-margin: (
+  small: 5vw,
+  medium: 5vw,
+  big: 5vw
+);

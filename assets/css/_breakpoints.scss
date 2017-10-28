@@ -1,7 +1,7 @@
 // BREAKPOINTS
 
-$large-breakpoint: 1024px;
-$medium-breakpoint: 760px;
+$large-breakpoint: 900px;
+$medium-breakpoint: 500px;
 
  @mixin breakpoint($point) {
    @if $point == desktop {

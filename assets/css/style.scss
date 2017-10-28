@@ -4,7 +4,12 @@
 @import 'colours';
 @import 'spacing';
 
+* {
+  transition: 0.5s;
+}
+
 body {
+  margin: 0;
   background: $background-color;
   color: $default-font-color;
 }
@@ -36,11 +41,10 @@ h1 {
   font-size: font-size(h1, small);
   letter-spacing: 7.2px;
   margin: 0 20px 0 20px;
-  transition: 0.5s;
 
   @include breakpoint(tablet){
-    
-    }
+    font-size: font-size(h1, medium);
+    };
   @include breakpoint(desktop){
     font-size: font-size(h1, big);
   }
@@ -48,7 +52,6 @@ h1 {
 
 h2, h3 {
   display: block;
-  transition: 0.5s;
 }
 
 h2 {
@@ -56,6 +59,12 @@ h2 {
   font-size: font-size(h2, small);  
   font-weight: 300;
   margin: 10px 0 0 0;
+  @include breakpoint(tablet){
+    font-size: font-size(h2, medium);
+    };
+  @include breakpoint(desktop){
+    font-size: font-size(h2, big);
+  };
 }
 
 h3 {
@@ -73,33 +82,64 @@ p {
   font-weight: 300;
   font-size: font-size(p, small);  
   margin: auto;
-  width: map-get($paragraphs, small);
-  transition: 0.5s;
+  max-width: map-get($paragraphs, small);
+  @include breakpoint(tablet){
+    max-width: map-get($paragraphs, medium);
+    font-size: font-size(p, medium);
+    }
+  @include breakpoint(desktop){
+    max-width: map-get($paragraphs, big);
+    font-size: font-size(p, big);
+  }
 }
 
 .vertical-margin {  
-  padding-top: $overlap-margin;
+  padding-top: map-get($overlap-margin, small);
   min-height: 100vh;
-  margin-left: $vertical-margin-width;
-  margin-top: $top-margin;
+  margin-left: map-get($vertical-margin-width, small);
+  margin-top: map-get($top-margin, small);
   border-left: 2px solid $purple;
+  @include breakpoint(tablet){
+    padding-top: map-get($overlap-margin, medium);
+    margin-left: map-get($vertical-margin-width, medium);   
+    margin-top: map-get($top-margin, medium); 
+    }
+  @include breakpoint(desktop){
+    padding-top: map-get($overlap-margin, big);
+    margin-left: map-get($vertical-margin-width, big);   
+    margin-top: map-get($top-margin, big); 
+  }
 }
 
 .horizontal-line {
   border-top: 2px solid $red;
-  width: 100vw - $overlap-margin;
-  margin-left: -$overlap-margin;
+  width: 100vw - map-get($overlap-margin, small);
+  margin-left: -(map-get($overlap-margin, small));
+  @include breakpoint(tablet){
+    width: 100vw - map-get($overlap-margin, medium);
+    margin-left: -(map-get($overlap-margin, medium));
+    }
+  @include breakpoint(desktop){
+    width: 100vw - map-get($overlap-margin, big);
+    margin-left: -(map-get($overlap-margin, big));
+  }
 }
 
 .nav-bar {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-self: center;
   min-height: 60px;
   width: 100%;
   max-width: 1000px;
   align-content: center;
   justify-content: center;
+  @include breakpoint(tablet){
+    flex-direction: row;
+    }
+  @include breakpoint(desktop){
+    flex-direction: row;
+  }
   p {
     text-align: center;
     line-height: normal;
@@ -111,7 +151,6 @@ p {
   a {
     text-decoration: none;
     color: #222222;
-    transition: 0.5s;
   }
   a:hover {
     color: #A31621;
@@ -121,7 +160,7 @@ p {
 .intro-section {
   display: flex;
   flex-direction: column;
-  min-height: 100vh - $top-margin;
+  min-height: 100vh - map-get($top-margin, small);
   margin: 0;
   padding: 0;
 }
@@ -135,7 +174,6 @@ p {
   align-content: flex-start;
   p {
     text-align: center;
-    font-size: font-size(intro-p, small);  
     line-height: 200%;
   }
 }
