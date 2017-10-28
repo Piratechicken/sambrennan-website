@@ -1,0 +1,17 @@
+// BREAKPOINTS
+
+$large-breakpoint: 1024px;
+$medium-breakpoint: 760px;
+
+ @mixin breakpoint($point) {
+   @if $point == desktop {
+     @media (min-width: $large-breakpoint) { 
+       @content; 
+     }
+   }
+   @else if $point == tablet {
+     @media (min-width: $medium-breakpoint) and (max-width: $large-breakpoint - 1) {
+       @content; 
+      }
+   }
+}

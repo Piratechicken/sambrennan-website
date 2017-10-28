@@ -1,0 +1,37 @@
+// TYPEFACES
+$header-font: 'Montserrat Alternates', sans-serif;
+$main-font: 'Montserrat', sans-serif;
+
+// FONT SIZES
+$font-sizes: (
+  h1: (
+    big: 48px,
+    medium: 48px,
+    small: 30px
+  ),
+  h2: (
+    big: 24px,
+    medium: 24px,
+    small: 24pxx
+  ),
+  h3: (
+    big: 36px,
+    medium: 36px,
+    small: 36px
+  ),
+  intro-p: (
+    big: 20px,
+    medium: 20px,
+    small: 18px
+  ),
+  p: (
+    big: 20px,
+    medium: 18px,
+    small: 18px
+  )
+);
+
+// retrieve font siz from $font-sizes map eg. `font-size(h1, medium)`
+@function font-size($element, $size) {
+  @return map-get(map-get($font-sizes, $element), $size);
+}

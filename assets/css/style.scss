@@ -1,73 +1,8 @@
-// SPACING
-$vertical-margin-width: 10vw;
-$top-margin: 5vh;
-$overlap-margin: 5vw;
-$paragraph-margin: 15vw;
-$paragraph-width: 700px;
-$header-height: 140px;
-
-// COLOURS
-$purple: #360568;
-$red: #A31621;
-$light-purple: #7785AC;
-$background-color: #F5F5F5;
-$default-font-color: #222222;
-
-// FONTS
-$header-font: 'Montserrat Alternates', sans-serif;
-$main-font: 'Montserrat', sans-serif;
-
-// FONT SIZES
-$font-sizes: (
-  h1: (
-    big: 48px,
-    medium: 48px,
-    small: 30px
-  ),
-  h2: (
-    big: 48px,
-    medium: 48px,
-    small: 48px
-  ),
-  h3: (
-    big: 48px,
-    medium: 48px,
-    small: 48px
-  ),
-  intro-p: (
-    big: 48px,
-    medium: 48px,
-    small: 48px
-  ),
-  p: (
-    big: 48px,
-    medium: 48px,
-    small: 48px
-  )
-);
-
-// BREAKPOINTS
-$large-breakpoint: 1024px;
-$medium-breakpoint: 760px;
-
- @mixin breakpoint($point) {
-   @if $point == desktop {
-     @media (min-width: $large-breakpoint) { 
-       @content; 
-     }
-   }
-   @else if $point == tablet {
-     @media (min-width: $medium-breakpoint) and (max-width: $large-breakpoint - 1) {
-       @content; 
-      }
-   }
-}
-
-// retrieve color from $colors map ie. `color(primary, base)`
-@function font-size($element, $size) {
-  // eg font-size(h1, small) 
-  @return map-get(map-get($font-sizes, $element), $size);
-}
+@import 'normalize';
+@import 'breakpoints';
+@import 'fonts';
+@import 'colours';
+@import 'spacing';
 
 body {
   background: $background-color;
@@ -98,7 +33,7 @@ h1, h2, h3 {
 h1 {
   font-weight: normal;
   text-align: center;
-  font-size: map-get(map-get($font-sizes, h1), small);
+  font-size: font-size(h1, small);
   letter-spacing: 7.2px;
   margin: 0 20px 0 20px;
   transition: 0.5s;
@@ -107,7 +42,7 @@ h1 {
     
     }
   @include breakpoint(desktop){
-    font-size: map-get(map-get($font-sizes, h1), big);
+    font-size: font-size(h1, big);
   }
 }
 
@@ -118,14 +53,14 @@ h2, h3 {
 
 h2 {
   text-align: center;
-  // font-size: $h2-size;  
+  font-size: font-size(h2, small);  
   font-weight: 300;
   margin: 10px 0 0 0;
 }
 
 h3 {
   text-align: left; 
-  // font-size: $h3-size;
+  font-size: font-size(h3, small);  
   font-weight: 400;
   color: $light-purple;
   letter-spacing: 4px;
@@ -138,7 +73,7 @@ h3 {
 p {
   font-family: $main-font;
   font-weight: 300;
-  // font-size: $p-size;
+  font-size: font-size(p, small);  
   margin: auto;
   width: $paragraph-width;
   transition: 0.5s;
@@ -200,7 +135,7 @@ p {
   align-content: flex-start;
   p {
     text-align: center;
-    // font-size: $intro-p-size;
+    font-size: font-size(intro-p, small);  
     line-height: 200%;
   }
 }
