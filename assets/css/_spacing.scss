@@ -2,6 +2,18 @@
 $vertical-margin-width: 10vw;
 $top-margin: 5vh;
 $overlap-margin: 5vw;
-$paragraph-margin: 15vw;
-$paragraph-width: 700px;
 $header-height: 140px;
+$paragraph-margin: 15vw;
+
+
+
+$paragraphs: (
+  small: 700px,
+  medium: 700px,
+  big: 700px
+);
+
+// _component.scss
+// .element {
+//   background-color: map-get($colors, sky);
+// }

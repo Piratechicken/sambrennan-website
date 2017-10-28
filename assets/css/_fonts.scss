@@ -31,7 +31,7 @@ $font-sizes: (
   )
 );
 
-// retrieve font siz from $font-sizes map eg. `font-size(h1, medium)`
+// retrieve font size from $font-sizes map eg. `font-size(h1, medium)`
 @function font-size($element, $size) {
   @return map-get(map-get($font-sizes, $element), $size);
 }

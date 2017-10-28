@@ -65,9 +65,7 @@ h3 {
   color: $light-purple;
   letter-spacing: 4px;
   margin: 40px auto 10px auto;
-  width: $paragraph-width;
-  // margin-left: $paragraph-margin;
-  // margin: 80px 20px 20px 50px; 
+  width: map-get($paragraphs, small);
 }
 
 p {
@@ -75,7 +73,7 @@ p {
   font-weight: 300;
   font-size: font-size(p, small);  
   margin: auto;
-  width: $paragraph-width;
+  width: map-get($paragraphs, small);
   transition: 0.5s;
 }
 
@@ -95,9 +93,11 @@ p {
 
 .nav-bar {
   display: flex;
-  min-height: 60px;
   flex-direction: row;
+  align-self: center;
+  min-height: 60px;
   width: 100%;
+  max-width: 1000px;
   align-content: center;
   justify-content: center;
   p {

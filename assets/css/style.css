@@ -348,9 +348,11 @@ p {
 
 .nav-bar {
   display: flex;
-  min-height: 60px;
   flex-direction: row;
+  align-self: center;
+  min-height: 60px;
   width: 100%;
+  max-width: 1000px;
   align-content: center;
   justify-content: center; }
   .nav-bar p {
