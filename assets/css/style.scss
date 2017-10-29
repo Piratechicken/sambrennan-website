@@ -88,8 +88,8 @@ p {
   font-family: $main-font;
   font-weight: 300;
   font-size: font-size(p, small);  
-  margin: auto;
-  padding: 20px;
+  margin: 20px auto;
+  padding: 0 20px;
   max-width: map-get($paragraphs, small);
   @include breakpoint(tablet){
     max-width: map-get($paragraphs, medium);
@@ -149,12 +149,13 @@ p {
     flex-direction: row;
   }
   p {
+    margin: auto;
     text-align: center;
     line-height: normal;
     font-weight: 400;
     font-size: 16px;
     letter-spacing: 1px;
-    padding: 10px;
+    padding: 8px 10px;
   }
   a {
     text-decoration: none;
@@ -168,18 +169,23 @@ p {
 .intro-section {
   display: flex;
   flex-direction: column;
-  min-height: 100vh - map-get($top-margin, small);
+  min-height: calc(100vh - #{map-get($overlap-margin, small)} - #{map-get($top-margin, small)} + 4px);
   margin: 0;
   padding: 0;
+  @include breakpoint(tablet){
+    min-height: calc(100vh - #{map-get($overlap-margin, medium)} - #{map-get($top-margin, medium)} + 4px);
+  }
+  @include breakpoint(desktop){
+    min-height: calc(100vh - #{map-get($overlap-margin, big)} - #{map-get($top-margin, big)} + 4px);
+  }
 }
 
 .intro-content-container {
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-content: flex-start;
+  justify-content: center;
+  align-items: center;
   p {
     text-align: center;
     line-height: 200%;
