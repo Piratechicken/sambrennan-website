@@ -1,0 +1,66 @@
+$purple: #360568;
+$red: #A31621;
+$light-purple: #7785AC;
+$background-color: #F5F5F5;
+$default-font-color: #222222;
+
+form {
+  margin: 20px auto;
+  padding: 0 20px;
+  max-width: map-get($paragraphs, small);
+  @include breakpoint(tablet){
+    max-width: map-get($paragraphs, medium);
+    }
+  @include breakpoint(desktop){
+    max-width: map-get($paragraphs, big);
+  }
+}
+
+form div + div {
+  margin-top: 1em;
+}
+input, textarea {
+  padding: 10px;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: #4B4B4B;
+  width: 80vw;
+  max-width: 600px;
+  box-sizing: border-box;
+  border: 1px solid $red;
+  background: none;
+  border-radius: 4px;
+}
+
+input:focus, textarea:focus {
+  border: 1px $purple solid;
+  outline: none;
+}
+
+textarea {
+  vertical-align: top;
+  color: #4B4B4B;
+  height: 7em;
+}
+
+button {
+background: $light-purple;
+width: 80vw;
+max-width: 600px;
+font-family: 'Raleway', sans-serif;
+font-style: normal;
+font-weight: normal;
+font-size: 16px;
+letter-spacing: 2px;
+color: $background-color;
+letter-spacing: 2px;
+padding: 5px;
+border-radius: 4px;
+border: none;
+}
+button:hover {
+  background: rgb(88, 106, 155);
+}

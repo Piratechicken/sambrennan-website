@@ -34,7 +34,7 @@
     </div>
 
     <div class = "intro-content-container">
-       <div> <p>Professor Samantha Brennan *active verbs* contemporary ethics, with interests in applied ethics, social and political philosophy, and feminist theory. She's also published about children's rights and family justice, normative ethics, rights theories, gender and sexuality, death, and fashion.
+       <div> <p>Professor Samantha Brennan explores contemporary morality, with a focus on applied ethics, politicals and feminist theory. She has also worked on on children's rights, family justice, gender &amp; sexuality, death and fashion.
 
         <p>Brennan is currently a professor in the Department of Women's Studies and Feminist Research at Western University, Canada.</p>
 
@@ -90,7 +90,26 @@
     <div class = "horizontal-line"></div>
     <div class="section-content-container">
       <div>
-        This is a form.
+        <form name="contact-form" action="/success.html" netlify>
+          <div>
+              <input type="text" id="name" name="user_name" placeholder="Name*" required>
+          </div>
+          <div>
+              <input type="email" id="mail" name="email" placeholder="Email*" required>
+          </div>
+          <div>
+              <input type="tel" id="phone" name="phone_number" placeholder="Phone number">
+          </div>
+          <div>
+              <input type="text" id="subject" name="subject" placeholder="Subject">
+          </div>
+          <div>
+              <textarea id="msg" name="message" placeholder="Message*" required></textarea>
+          </div>
+          <div class="button">
+              <button type="submit">SEND</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

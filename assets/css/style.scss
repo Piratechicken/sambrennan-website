@@ -3,6 +3,7 @@
 @import 'fonts';
 @import 'colours';
 @import 'spacing';
+@import 'form';
 
 * {
   transition: 0.5s;
@@ -72,14 +73,18 @@ h3 {
   font-size: font-size(h3, small);  
   font-weight: 400;
   color: $light-purple;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   padding: 0 20px;
   margin: 40px auto 10px auto;
   max-width: map-get($paragraphs, small);
   @include breakpoint(tablet){
+    font-size: font-size(h3, medium);
+    letter-spacing: 4px;
     max-width: map-get($paragraphs, medium);
     }
   @include breakpoint(desktop){
+    font-size: font-size(h3, big);
+    letter-spacing: 4px;
     max-width: map-get($paragraphs, big);
   }
 }
@@ -189,6 +194,7 @@ p {
   p {
     text-align: center;
     line-height: 200%;
+    margin-top: 30px;
   }
 }
 

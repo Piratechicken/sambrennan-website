@@ -281,6 +281,62 @@ textarea {
 optgroup {
   font-weight: bold; }
 
+form {
+  margin: 20px auto;
+  padding: 0 20px;
+  max-width: 400px; }
+  @media (min-width: 500px) and (max-width: 899px) {
+    form {
+      max-width: 600px; } }
+  @media (min-width: 900px) {
+    form {
+      max-width: 800px; } }
+
+form div + div {
+  margin-top: 1em; }
+
+input, textarea {
+  padding: 10px;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: #4B4B4B;
+  width: 80vw;
+  max-width: 600px;
+  box-sizing: border-box;
+  border: 1px solid #A31621;
+  background: none;
+  border-radius: 4px; }
+
+input:focus, textarea:focus {
+  border: 1px #360568 solid;
+  outline: none; }
+
+textarea {
+  vertical-align: top;
+  color: #4B4B4B;
+  height: 7em; }
+
+button {
+  background: #7785AC;
+  width: 80vw;
+  max-width: 600px;
+  font-family: 'Raleway', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: #F5F5F5;
+  letter-spacing: 2px;
+  padding: 5px;
+  border-radius: 4px;
+  border: none; }
+
+button:hover {
+  background: #586a9b; }
+
 * {
   transition: 0.5s; }
 
@@ -330,18 +386,22 @@ h2 {
 
 h3 {
   text-align: left;
-  font-size: 36px;
+  font-size: 26px;
   font-weight: 400;
   color: #7785AC;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   padding: 0 20px;
   margin: 40px auto 10px auto;
-  max-width: auto; }
+  max-width: 400px; }
   @media (min-width: 500px) and (max-width: 899px) {
     h3 {
+      font-size: 30px;
+      letter-spacing: 4px;
       max-width: 600px; } }
   @media (min-width: 900px) {
     h3 {
+      font-size: 36px;
+      letter-spacing: 4px;
       max-width: 800px; } }
 
 p {
@@ -350,7 +410,7 @@ p {
   font-size: 16px;
   margin: 20px auto;
   padding: 0 20px;
-  max-width: auto; }
+  max-width: 400px; }
   @media (min-width: 500px) and (max-width: 899px) {
     p {
       max-width: 600px;
@@ -440,7 +500,8 @@ p {
   align-items: center; }
   .intro-content-container p {
     text-align: center;
-    line-height: 200%; }
+    line-height: 200%;
+    margin-top: 30px; }
 
 .section {
   display: flex;
