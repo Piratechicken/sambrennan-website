@@ -6,7 +6,7 @@
 @import 'form';
 
 * {
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 body {
@@ -89,6 +89,37 @@ h3 {
   }
 }
 
+details {
+  margin: 40px auto 10px auto;  
+  max-width: map-get($paragraphs, small);
+  @include breakpoint(tablet){
+    max-width: map-get($paragraphs, medium);
+    }
+  @include breakpoint(desktop){
+    max-width: map-get($paragraphs, big);
+  }
+}
+
+summary {
+  background: #333;
+  color: #FFF;
+  border-radius: 3px;
+  padding: 5px 10px;
+  outline: none;
+}
+
+h4 {
+  font-family: $main-font;
+  font-weight: 400;
+  font-size: font-size(p, small);
+  @include breakpoint(tablet){
+    font-size: font-size(p, medium);
+    }
+  @include breakpoint(desktop){
+    font-size: font-size(p, big);
+  }
+}
+
 p {
   font-family: $main-font;
   font-weight: 300;
@@ -104,6 +135,39 @@ p {
     max-width: map-get($paragraphs, big);
     font-size: font-size(p, big);
   }
+}
+
+.links {
+  display: -webkit-flex;
+  display: flex;
+  position: relative;
+  margin: auto;
+  width: 100%;
+  max-width: 700px;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  background: none;
+}
+
+.links img {
+  width: 60px;
+  height: auto;
+  margin-bottom: 20px;
+  opacity: 0.85;
+  transition: 0.5s;
+  border: solid 2px $purple;
+  border-radius: 50%;
+}
+.links img:hover {
+  border: solid 2px $red;
+  fill: red;
+}
+.links:hover svg path,
+.links:hover{
+  fill:'red';
+  color:red;
 }
 
 .vertical-margin {  
@@ -168,6 +232,7 @@ p {
   }
   a:hover {
     color: #A31621;
+    transition: 1s;
   }
 }
 
@@ -218,6 +283,7 @@ p {
   img {
     width: 200px;
     height: auto;
+    float: right;
   }
 }
 
